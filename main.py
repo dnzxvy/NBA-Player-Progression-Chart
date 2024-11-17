@@ -12,11 +12,11 @@ import numpy as np
 
 
 def get_player_id(player_name):
-    # Find the player by name
+    #Find the player by name
     player_list = [player for player in players.get_players() if player_name.lower() in player['full_name'].lower()]
 
     if player_list:
-        # Return the first matching player's ID
+        #Return the first matching player's ID
         return player_list[0]['id']
     else:
         raise ValueError("Player not found. Please check the player name.")
@@ -77,11 +77,7 @@ def plot_player_stats(player_name):
 
     ani = FuncAnimation(fig=fig, func=update, frames=len(seasons), interval=700)
 
-    # Create the animation:
-    # - 'update' is the function that will update the plot for each frame
-    # - 'frames' is the number of frames (i.e., the length of the 'seasons' data)
-    # - 'interval' controls how fast the frames are displayed (500 ms between frames)
-    # - 'blit=True' optimizes the animation by only redrawing the parts of the plot that change
+
 
     plt.grid(True)
     plt.show()
