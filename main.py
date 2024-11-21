@@ -42,7 +42,7 @@ def plot_player_stats(player_name):
 
     #save to csv
     all_time_player_stats.to_csv('PlayerProgression.csv', index=False)
-    print("\nJoker stats saved to 'PlayerProgression.csv'")
+    print(f"\n{player_name} stats saved to 'PlayerProgression.csv'")
 
     all_time_player_stats['SEASON_ID'] = all_time_player_stats['SEASON_ID'].str[:4].astype(int)
 
@@ -54,7 +54,7 @@ def plot_player_stats(player_name):
 
 
     fig, ax = plt.subplots(figsize=(20, 8))
-    ax.set_xlim(seasons.min(), seasons.max() + 5) #x-axis for seasons.
+    ax.set_xlim(seasons.min(), seasons.max() + 6) #x-axis for seasons.
     ax.set_ylim(0, points.max() + 5) #y-axis for ppg
 
     line, = ax.plot([], [], color='blue', marker='o') #initialises an empty plot
